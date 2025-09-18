@@ -7,9 +7,10 @@ public class CameraManager : MonoBehaviour
     [Header("Camera Settings")]
     [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private float _zoomSpeed = 15f;
-    [SerializeField] private float _minFOV = 20f;
+    [SerializeField] private float _minFOV = 5f;
     [SerializeField] private float _maxFOV = 100f;
     [SerializeField] private CinemachineCamera _vCamera;
+
     private Vector2 _movementInput;
     private float _zoomInput;
     private MyPlayerInput _playerInput;
@@ -72,12 +73,12 @@ public class CameraManager : MonoBehaviour
         }
     }
 
-    private void HandleZoom()
-    {
-        if (_zoomInput != 0f)
-        {
-            float newFOV = _vCamera.Lens.FieldOfView - (_zoomInput * _zoomSpeed * Time.deltaTime);
-            _vCamera.Lens.FieldOfView = Mathf.Clamp(newFOV, _minFOV, _maxFOV);
+    private void HandleZoom() {
+        if (_zoomInput != 0f) {
+            Vector3 currentPosition = _vCamera.transform.position;
+            float newY = currentPosition.y - (_zoomInput * _zoomSpeed * Time.deltaTime);
+            newY = Mathf.Clamp(newY, _minFOV, _maxFOV);
+            _vCamera.transform.position = new Vector3(currentPosition.x, newY, currentPosition.z);
         }
     }
 

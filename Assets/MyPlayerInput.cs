@@ -114,7 +114,7 @@ public partial class @MyPlayerInput: IInputActionCollection2, IDisposable
                     ""name"": ""Point"",
                     ""type"": ""Value"",
                     ""id"": ""04a8cbec-1925-42d2-a663-ae6ad7a05382"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -255,7 +255,7 @@ public partial class @MyPlayerInput: IInputActionCollection2, IDisposable
                     ""name"": ""Scroll"",
                     ""type"": ""Value"",
                     ""id"": ""99b9bcc0-1955-4353-8e83-0a5900584648"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -334,7 +334,7 @@ public partial class @MyPlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""05ce69c0-bf21-4830-9c95-27df5c6d686e"",
-                    ""path"": ""<Mouse>/scroll/down"",
+                    ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
