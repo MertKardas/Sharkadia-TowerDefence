@@ -8,9 +8,16 @@ using UnityEngine;
 public class GameContext
 {
     public event Action<int> OnGoldChanged;
-    public int Gold { get; private set; } = 0;
-    public GameContext() =>OnGoldChanged?.Invoke(Gold);
-    public void AddGold (int amount)
+    private int _gold = 0;
+    public int Gold {
+        get => _gold;
+        private set { 
+            _gold = value;
+            OnGoldChanged?.Invoke(_gold);
+        }
+    }
+    public GameContext() => OnGoldChanged?.Invoke(Gold);
+    public void AddGold(int amount)
     {
         if(amount < 0)
         {
@@ -18,7 +25,7 @@ public class GameContext
             return;
         }
         Gold += amount;
-        OnGoldChanged?.Invoke(Gold);
+        
     }
     public void SpendGold (int amount)
     {
@@ -33,10 +40,9 @@ public class GameContext
             return;
         }
         Gold -= amount;
-        OnGoldChanged?.Invoke(Gold);
+        
     }
     public void ResetResource() { 
         Gold = 0;
-        OnGoldChanged?.Invoke(Gold);
     }
 }

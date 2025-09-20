@@ -1528,6 +1528,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4984343506111715664, guid: 2517e1645638a52499d7d0476eeb3fe3, type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984343506111715664, guid: 2517e1645638a52499d7d0476eeb3fe3, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984343506111715664, guid: 2517e1645638a52499d7d0476eeb3fe3, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5801587749659680088, guid: 2517e1645638a52499d7d0476eeb3fe3, type: 3}
       propertyPath: m_Name
       value: BuildingButton
