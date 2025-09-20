@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
         GameContext = new GameContext();
-        GameContext.AddGold(500);
         InvokeRepeating(nameof(Test), 5f, 5f);
     }
     private void Test() {

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildingSO
   buildingName: castle 1
   buildingPrefab: {fileID: 3118640450100160052, guid: fd3edf82f26d0124fa3f26d07202d6cf, type: 3}
-  cost: 10
+  cost: 500
   buildTime: 3
   icon: {fileID: 0}

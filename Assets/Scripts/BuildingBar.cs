@@ -10,10 +10,10 @@ public class BuildingBar : MonoBehaviour {
 
     public event Action<BuildingSO> OnSelectedBuildingChanged;
 
-    public BuildingSO _selectedBuildingSO;
+    private BuildingSO _selectedBuildingSO;
     public BuildingSO SelectedBuildingSO {
         get => _selectedBuildingSO;
-        private set {
+        set {
             if (_selectedBuildingSO == value)
                 return; // ayný seçim tekrar edilirse event tetiklenmesin
 
@@ -35,22 +35,7 @@ public class BuildingBar : MonoBehaviour {
 
     private void CreateBuildingButton(BuildingSO buildingSO) {
         var buttonGO = Instantiate(buildingButtonPrefab, transform);
+        buttonGO.GetComponent<BuildingButton>().Initialize(buildingSO, this);
 
-        // UI bileþenlerini doldur
-        var image = buttonGO.GetComponent<Image>();
-        if (buildingSO.icon)
-            image.sprite = buildingSO.icon;
-
-        var label = buttonGO.GetComponentInChildren<TextMeshProUGUI>();
-        label.text = buildingSO.buildingName ?? "Castle null";
-
-        var uiButton = buttonGO.GetComponent<Button>();
-        uiButton.onClick.AddListener(() => {
-            SelectedBuildingSO = buildingSO;
-            GameObject buildingGO = Instantiate(buildingSO.buildingPrefab); 
-            var building = buildingGO.GetComponent<Building>();
-            
-
-        });
     }
 }

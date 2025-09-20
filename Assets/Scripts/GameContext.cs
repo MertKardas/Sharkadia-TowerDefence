@@ -9,6 +9,7 @@ public class GameContext
 {
     public event Action<int> OnGoldChanged;
     public int Gold { get; private set; } = 0;
+    public GameContext() =>OnGoldChanged?.Invoke(Gold);
     public void AddGold (int amount)
     {
         if(amount < 0)
